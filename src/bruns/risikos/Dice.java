@@ -1,15 +1,15 @@
 package bruns.risikos;
 
-public class DiceRoll {
+public class Dice {
 	
 	final int facceDado = 6;
-	
+	int[] result;
 	
 	int numberOfThrows;
 	int c;
 	
 	int[] tiro(int nTiri, boolean pc) {
-		int[] result = new int[nTiri];
+		result = new int[3];
 		if(pc) {
 			System.out.println("Tiri/o del Computer:");
 		}
@@ -18,7 +18,7 @@ public class DiceRoll {
 		}
 		for(c = 0 ; c < nTiri ; c++) {
 			
-			result[c] = (int) (Math.random() * facceDado);
+			result[c] = (int) (Math.random() * facceDado + 1);
 			System.out.println(result[c]);
 		}
 		
@@ -27,7 +27,7 @@ public class DiceRoll {
 	}
 	
 	
-	public DiceRoll() {
+	public Dice() {
 	}
 	
 	
