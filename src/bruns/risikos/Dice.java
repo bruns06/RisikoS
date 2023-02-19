@@ -1,5 +1,7 @@
 package bruns.risikos;
 
+import java.util.Arrays;
+
 public class Dice {
 	
 	final int facceDado = 6;
@@ -21,6 +23,8 @@ public class Dice {
 			result[c] = (int) (Math.random() * facceDado + 1);
 			System.out.println(result[c]);
 		}
+		
+		Arrays.sort(result);
 		
 		return result;
 	

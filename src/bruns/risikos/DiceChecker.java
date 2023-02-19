@@ -2,7 +2,8 @@ package bruns.risikos;
 
 public class DiceChecker {
 	int maxDice;
-	Tank t = new Tank(3);
+	//real tank controller
+	Tank t = new Tank(1);
 	boolean isAllowed;
 	
 	public DiceChecker(int maxDice) {

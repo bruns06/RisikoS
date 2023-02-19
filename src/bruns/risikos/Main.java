@@ -1,7 +1,6 @@
 package bruns.risikos;
 
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Main {
 
@@ -12,7 +11,7 @@ public class Main {
 		Dice prova = new Dice();
 		Dice prova2 = new Dice();
 		
-		Scanner s = new Scanner(System.in);
+		 {try (Scanner s = new Scanner(System.in)) {
 			int nTiri = s.nextInt();
 				while(nTiri > 3) {
 					System.out.println("Non puoi tirare più di 3 dadi. Riprova");
@@ -25,13 +24,9 @@ public class Main {
 					}
 				} 
 			 prova.tiro(nTiri, false);
-			 
-	
-		
-		
-		prova2.tiro((int) (Math.random() * 3) + 1, true);
-		Arrays.sort(prova.result);
-		Arrays.sort(prova2.result);
+		}
+			prova2.tiro((int) (Math.random() * 3) + 1, true);
+
 		int pP = 0;
 		int aiP = 0;
 		
@@ -49,10 +44,9 @@ public class Main {
 		}
 		}
 		catch(ArrayIndexOutOfBoundsException e ) {
-			if(prova.result.length > prova2.result.length) {
-				
-			}
+			
 		}
+		
 		System.out.println("________________________________________________________________________________________________\n\n");
 		if(pP > aiP) {
 			System.out.println("Vince il Player!\nN vittorie: \t" + pP + "\nTiri vinti dal pc: \t" + aiP);
@@ -63,7 +57,12 @@ public class Main {
 		if (pP == aiP) {
 			System.out.println("Pareggio.");
 		}
+		System.out.println("________________________________________________________________________________________________\n\n");
+	
+		 }
+
 	}
+		
 }
 	
 		
